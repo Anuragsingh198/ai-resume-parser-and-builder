@@ -4,7 +4,7 @@ from typing import Optional
 
 class Settings(BaseSettings):
     # PostgreSQL
-    DATABASE_URL: str = "postgresql+asyncpg://neondb_owner:npg_Pe78yatChwNK@ep-weathered-bar-ad0rsivv-pooler.c-2.us-east-1.aws.neon.tech/neondb"
+    DATABASE_URL: str = ""
     # Format: postgresql+asyncpg://username:password@host:port/database_name
     # Note: SSL is configured in connection.py for asyncpg compatibility
     
@@ -22,8 +22,8 @@ class Settings(BaseSettings):
     CLOUDINARY_API_SECRET: Optional[str] = None
 
 #Job api credentials
-    APPLICATION_ID:str = 'bb4cfadd'
-    API_KEY:str = 'a9a8160d8bb8682d405b841e2f3004a9'
+    APPLICATION_ID:str = ''
+    API_KEY:str = ''
 
     # CORS
     CORS_ORIGINS: list = [
