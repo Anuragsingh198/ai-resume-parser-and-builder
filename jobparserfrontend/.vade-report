@@ -1,0 +1,37 @@
+# Vercel Web Analytics Configuration
+
+## Summary
+Updated the Vercel Web Analytics implementation to use the correct Next.js-specific import path as per the latest official documentation.
+
+## Changes Made
+
+### Modified Files:
+- **frontend/app/layout.tsx** - Updated Analytics import path
+
+## Details
+
+### What was changed:
+The project already had `@vercel/analytics` package installed (version 1.6.1) and the `Analytics` component was already added to the root layout. However, it was using the generic React import path instead of the Next.js-specific one.
+
+**Changed:**
+- Import path from `@vercel/analytics/react` to `@vercel/analytics/next`
+
+This change follows the official Vercel Analytics documentation which recommends using `@vercel/analytics/next` for Next.js projects with the App Router for "more seamless integration with Next.js, including route support."
+
+## Implementation Details
+
+1. **Fetched Latest Documentation**: Retrieved current installation instructions from https://vercel.com/docs/analytics/quickstart
+2. **Identified Framework**: Confirmed this is a Next.js project using App Router (based on `app/layout.tsx`)
+3. **Applied Framework-Specific Configuration**: Updated to use the Next.js-specific Analytics component
+4. **Verified Build**: Successfully built the project with `npm run build` to ensure no errors were introduced
+
+## Testing Performed
+- ✅ Build completed successfully with Next.js 16.2.4
+- ✅ All pages compiled without errors
+- ✅ No TypeScript errors introduced
+
+## Notes
+- The `@vercel/analytics` package was already installed, so no package.json changes were needed
+- The Analytics component was already correctly placed in the root layout, just needed the import path correction
+- This change provides better Next.js integration and route tracking support
+- To enable analytics data collection, the project needs to be deployed to Vercel and Analytics enabled in the Vercel dashboard

@@ -1,0 +1,2 @@
+"""JobHunch backend application package."""
+
